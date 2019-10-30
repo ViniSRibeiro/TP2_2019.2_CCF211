@@ -22,6 +22,7 @@ int main() {
 
     if((pArquivo = fopen(leitorN,"r")) == NULL){
       printf("Erro na abertura do arquivo.\n");
+        return 1;
     }else{
       printf("Arquivo aberto com sucesso.\n");
 
@@ -99,7 +100,8 @@ int main() {
                   MASK = MASK << 1 ;
               }
 
-              printf("%s\n", str) ;
+              printf("%d, ", str->peso) ;
+              printf("%d\n", str->valorImportancia) ;
           }
 
           NUM++ ;
