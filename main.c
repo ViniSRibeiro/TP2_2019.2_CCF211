@@ -7,15 +7,51 @@
 #define MAX_INPUT 100
 
 int main() {
+
+    int N,peso,valor,i = 0;
+    tupla *Vetor;
+    char leitorN[20];
+
+    FILE* pArquivo;
+    printf("Digite o nome do arquivo com a extensao .txt: ");
+    scanf("%s",leitorN);
+
+
+    pArquivo = fopen(leitorN,"r");
+
+    if((pArquivo = fopen(leitorN,"r")) == NULL){
+      printf("Erro na abertura do arquivo.\n");
+    }else{
+      printf("Arquivo aberto com sucesso.\n");
+
+      fscanf(pArquivo,"%s", leitorN);
+      N = atoi(leitorN);
+      Vetor = (tupla *)malloc(N * sizeof(tupla));
+      //printf("%d\n",N);
+
+      while(fscanf(pArquivo,"%d %d",&peso,&valor) != EOF){
+          Vetor[i].peso = peso;
+          Vetor[i].valorImportancia = valor;
+          i++;
+          //printf("%d %d\n",peso,valor);
+      }
+    }
+    printf("ATUALIZOU\n");
+    for(i = 0; i < N;i++){
+      printf("%d %d\n",Vetor[i].peso,Vetor[i].valorImportancia );
+    }
+
     unsigned MAX, MASK, NUM ;
     int i, j, r, k, total = 0,total_maior = 0 ;
     /* Armazena a string de entrada. */
-    char input[MAX_INPUT] ;
+    tupla input;
     /* Armazena cada combinação. */
     char str[sizeof(input)],str_print[sizeof(input)] ;
 
-    printf("Digite o grupo inicial: ") ;
-    scanf("%s", input) ;
+  input = (tupla *)malloc(N * sizeof(tupla));
+  strcpy(input,tupla);
+  //  printf("Digite o grupo inicial: ") ;
+  //  scanf("%s", input) ;
 
     printf("Digite o r: ") ;
     scanf("%d", &r) ;
@@ -72,6 +108,7 @@ int main() {
         }
 
     }
+    */
     return 0;
 }
 /*
