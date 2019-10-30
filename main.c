@@ -1,8 +1,8 @@
 #include <stdio.h>
-
 #include <stdio.h>
 #include <string.h>
-
+#include "TadMochila.h"
+//-gcc -o teste main.c TadMochila.c TadMochila.h
 /* Tamanho máximo da entrada */
 #define MAX_INPUT 100
 
@@ -79,4 +79,3 @@ int main() {
  * um problema da combinaçao binaria,
  * tratar somente os indices
  * */
-
