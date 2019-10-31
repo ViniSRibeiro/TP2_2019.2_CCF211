@@ -3,18 +3,17 @@
 #include <string.h>
 #include "TadMochila.h"
 //gcc -o teste main.c TadMochila.c TadMochila.h
-/* Tamanho máximo da entrada */
-#define MAX_INPUT 100
 
 int main() {
+  
   int N,peso,valor,i = 0;
       tupla *Vetor;
       char leitorN[20];
 
       FILE* pArquivo;
-      printf("Digite o nome do arquivo com a extensao .txt: ");
+      printf("Digite o nome do arquivo: ");
       scanf("%s",leitorN);
-
+      strcat(leitorN,".txt");
 
       pArquivo = fopen(leitorN,"r");
 
@@ -39,15 +38,10 @@ int main() {
     //  for(i = 0; i < N;i++){
     //    printf("%d %d\n",Vetor[i].peso,Vetor[i].valorImportancia );
     //  }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
       int zero = 0,z;
       for(z = 1; z < N + 1;z++){
         comb(Vetor, z, zero);
       }
       return 0;
 }
-/*
- * o codigo so lida com vetor ja ordenado,
- * um problema da combinaçao binaria,
- * tratar somente os indices
- * */
