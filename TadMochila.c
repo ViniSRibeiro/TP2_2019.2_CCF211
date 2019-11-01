@@ -1,27 +1,31 @@
+//
+// Created by vinicius on 31/10/2019.
+//
+
 #include "TadMochila.h"
-
-void comb(tupla *arr, size_t n, size_t index){
-    size_t k;
-    if (index == n) {
-        /* array vazio, imprime o que está "para trás" */
-        printf("(%d %d) ", arr[0]);
-        for (k = 1; k < n; k++) printf("(%d %d) ", arr[k]);
-        puts("");
-        return;
+#include <string.h>
+void print(const int *v, const int size)
+{
+    if (v != 0) {
+        for (int i = 0; i < size; i++) {
+            printf("%4d", v[i] );
+        }
+        printf("\n");
     }
-    for (k = index; k < n; k++) {
-        tupla tmp;
-        /* mete cada um dos elementos ao principio */
-        tmp = arr[k];
-        arr[k] = arr[index];
-        arr[index] = tmp;
+} // print
 
-        /* recursividade! */
-        comb(arr, n, index + 1);
 
-        /* repoe posicao inicial */
-        tmp = arr[k];
-        arr[k] = arr[index];
-        arr[index] = tmp;
-    }
+void visit(int *Value, int N, int k)
+{
+    static int level = -1;
+    level = level+1; Value[k] = level;
+
+    if (level == N)
+        print(Value, N);
+    else
+        for (int i = 0; i < N; i++)
+            if (Value[i] == 0)
+                visit(Value, N, i);
+
+    level = level-1; Value[k] = 0;
 }

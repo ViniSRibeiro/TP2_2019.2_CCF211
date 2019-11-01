@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include <stdio.h>
 #include <string.h>
 #include "TadMochila.h"
+#include "combinador.h"
 //gcc -o teste main.c TadMochila.c TadMochila.h
 
 int main() {
-  
+
   int N,peso,valor,i = 0;
+
       tupla *Vetor;
       char leitorN[20];
 
@@ -39,9 +40,15 @@ int main() {
     //    printf("%d %d\n",Vetor[i].peso,Vetor[i].valorImportancia );
     //  }
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-      int zero = 0,z;
-      for(z = 1; z < N + 1;z++){
-        comb(Vetor, z, zero);
-      }
-      return 0;
+    int j = 0;
+    while (j < sizeof(N) ){
+        int arr[sizeof(N)] ;
+        int r = j;
+        int n = sizeof(arr)/sizeof(arr[0]);
+        printCombination(Vetor, n, r);
+        i++;
+    }
+
+    return 0;
+
 }

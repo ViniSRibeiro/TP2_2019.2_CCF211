@@ -3,4 +3,4 @@ project(TP220192CCF211 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(TP220192CCF211 main.c)
+add_executable(TP220192CCF211 main.c combinador.c combinador.h TadMochila.c TadMochila.h)
