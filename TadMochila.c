@@ -33,13 +33,13 @@ void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end,int index, 
     if (index == r)
     {
 
-        for (k=0; k<r; k++){
-          somatorio.peso_Agregado += data[k].peso;
-          somatorio.valor_Agregado += data[k].valorImportancia;
+        for (k=0; k<r-1; k++){
+          somatorio.peso_Agregado = somatorio.peso_Agregado + data[k].peso;
+          somatorio.valor_Agregado = somatorio.valor_Agregado + data[k].valorImportancia;
           somatorio.combinacao_atual[k] = data[k];
           somatorio.tamanho ++;
           printf("data:\n");
-          printf("(%d %d)\n",data[k].peso,data[k].valorImportancia );
+          printf("(%d %d)\n",data[k].peso,data[k].valorImportancia);
           printf("somatorio:\n");
           printf("(%d %d)",somatorio.combinacao_atual[k].peso,somatorio.combinacao_atual[k].valorImportancia);
           printf("\n");
