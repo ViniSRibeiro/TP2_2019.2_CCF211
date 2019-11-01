@@ -13,9 +13,5 @@ typedef struct{
   Ttupla combinacao_atual[40];
 }Tsomatorio;
 
-int fatorial(int n);
-
-int combinacao(int n,int p);
-
 void printCombination(Ttupla arr[], int n, int r);
 void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end,int index, int r);
