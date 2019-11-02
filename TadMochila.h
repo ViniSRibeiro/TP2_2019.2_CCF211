@@ -1,20 +1,19 @@
-//
-// Created by vinicius on 31/10/2019.
-//
-
-#ifndef TP220192CCF211_TADMOCHILA_H
-#define TP220192CCF211_TADMOCHILA_H
-
-#endif //TP220192CCF211_TADMOCHILA_H
-
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct{
-    int peso;
-    int valorImportancia;
-}tupla;
 
-void print(const int *v, const int size);
-void visit(int *Value, int N, int k);
-long long gcd(long long a, long long b);
-long long binom(long long n, long long p);
+typedef struct{
+  int peso;
+  int valorImportancia;
+}Ttupla;
+
+typedef struct{
+  int tamanho;
+  int peso_Agregado;
+  int valor_Agregado;
+  Ttupla combinacao_atual[40];
+}Tsomatorio;
+
+int fatorial(int n);
+int comparacao(int n,int p);
+void printCombination(Ttupla arr[], int n, int r,int c);
+void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end,int index, int r);
