@@ -6,7 +6,7 @@
 
 int main() {
 
-  int N,peso,valor,i = 0,r;
+  int N,peso,valor,i = 0,r,comp;
   Ttupla *Vetor;
   char leitorN[20];
 
@@ -35,12 +35,11 @@ int main() {
   //printf("%d %d\n",peso,valor);
     }
   }
-
   for(i = 0; i < N; i++){
     r = i+1;
-    printCombination(Vetor, N, r);
+    comp = N - (i+1);
+    printCombination(Vetor, N, r,comp);
   }
-  printf("finalllllllllllllllllllll\n");
 
       return 0;
 }
