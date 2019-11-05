@@ -29,13 +29,11 @@ int main() {
     fscanf(pArquivo,"%s", leitorN);
     N = atoi(leitorN);
     Vetor = (Ttupla *)malloc(N * sizeof(Ttupla));
-  //printf("%d\n",N);
 
     while(fscanf(pArquivo,"%d %d",&peso,&valor) != EOF){
       Vetor[i].peso = peso;
       Vetor[i].valorImportancia = valor;
       i++;
-  //printf("%d %d\n",peso,valor);
     }
   }
   for(i = 0; i < N; i++){
@@ -44,7 +42,7 @@ int main() {
     printCombination(Vetor, N, r,comp);
   }
 
-    
+
     printf("Tempo:%.5f Segundos\n",(clock() - tempo) / (double)CLOCKS_PER_SEC);
 
       return 0;

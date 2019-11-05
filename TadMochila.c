@@ -10,11 +10,7 @@ void printCombination(Ttupla arr[], int n, int r,int c)
     printf("------------------------------------------------\n");
     printf("* Peso Agregado: %d                             *\n",somatorio_print.peso_Agregado);
     printf("* Valor Agregado: %d                            *\n",somatorio_print.valor_Agregado);
-    /*for(i = 0 ; i < 40; i++){
-      if(somatorio_print.combinacao_atual[i].peso > 0){
-          printf("(%d %d) ",somatorio_print.combinacao_atual[i].peso,somatorio_print.combinacao_atual[i].valorImportancia);
-      }
-    }*/
+
     if (c == 0) {
       printf("\n");
       printf("Peso agregado da melhor combinacao: %d\n",somatorio_final.peso_Agregado );
@@ -25,24 +21,15 @@ void printCombination(Ttupla arr[], int n, int r,int c)
       }
       printf("\n");
     }
-    //printf("c = %d\n",c);
 }
 
 void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end, int index, int r)
 {
-  int j,count/*count = 0*/;
+  int j,count;
   somatorio.peso_Agregado = 0;
   somatorio.tamanho = 0;
   somatorio.valor_Agregado = 0;
-/*
-  somatorio_print.valor_Agregado = 0;
-  somatorio_print.tamanho = 0;
-  somatorio_print.peso_Agregado = 0;
-  for(j = 0; j < 40; j++){
-      somatorio_print.combinacao_atual[j].peso = -6;
-      somatorio_print.combinacao_atual[j].valorImportancia = -6;
-  }
-*/
+
     if (index == r)
     {
         for (j=0; j<r; j++){
@@ -62,9 +49,6 @@ void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end, int index,
 
                     }
                 }
-                //somatorio_print.combinacao_atual[count].peso= data[j].peso;
-                //somatorio_print.combinacao_atual[count].valorImportancia= data[j].peso;
-                //count +=1;
             }
         }
         printf("\n");
