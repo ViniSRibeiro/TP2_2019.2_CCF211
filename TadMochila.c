@@ -1,11 +1,11 @@
 #include "TadMochila.h"
-int CAPACIDADE = 100;
+int CAPACIDADE = 2;
 Tsomatorio somatorio, somatorio_print,somatorio_final;
 
 void printCombination(Ttupla arr[], int n, int r,int c)
 {
     Ttupla data[r];
-  //  int i;
+    int i;
     combinationUtil(arr, data, 0, n-1, 0, r);
     printf("------------------------------------------------\n");
     printf("* Peso Agregado: %d                             *\n",somatorio_print.peso_Agregado);
@@ -16,14 +16,21 @@ void printCombination(Ttupla arr[], int n, int r,int c)
       }
     }*/
     if (c == 0) {
-      printf("colocar nesse local as variaveis para o print final FINAL\n");
+      printf("\n");
+      printf("Peso agregado da melhor combinacao: %d\n",somatorio_final.peso_Agregado );
+      printf("Valor agregado da melhor combinacao: %d\n",somatorio_final.valor_Agregado );
+      printf("tamanho %d\n", somatorio_final.tamanho);
+      for (i = 0; i < somatorio_final.tamanho; i++) {
+        printf("(%d %d) ", somatorio_final.combinacao_atual[i].peso,somatorio_final.combinacao_atual[i].valorImportancia);
+      }
+      printf("\n");
     }
     //printf("c = %d\n",c);
 }
 
 void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end, int index, int r)
 {
-  int j/*count = 0*/;
+  int j,count/*count = 0*/;
   somatorio.peso_Agregado = 0;
   somatorio.tamanho = 0;
   somatorio.valor_Agregado = 0;
@@ -45,6 +52,16 @@ void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end, int index,
             if(somatorio.peso_Agregado <= CAPACIDADE && somatorio.valor_Agregado >somatorio_print.valor_Agregado) {
                 somatorio_print.peso_Agregado = somatorio.peso_Agregado;
                 somatorio_print.valor_Agregado = somatorio.valor_Agregado;
+                if(somatorio_print.valor_Agregado > somatorio_final.valor_Agregado && somatorio_print.peso_Agregado <= CAPACIDADE){
+                    somatorio_final.peso_Agregado = somatorio_print.peso_Agregado;
+                    somatorio_final.valor_Agregado = somatorio_print.valor_Agregado;
+                    somatorio_final.tamanho = r;
+                    for (count = 0; count < r ;count++ ) {
+                        somatorio_final.combinacao_atual[count].peso = data[count].peso;
+                        somatorio_final.combinacao_atual[count].valorImportancia = data[count].valorImportancia;
+
+                    }
+                }
                 //somatorio_print.combinacao_atual[count].peso= data[j].peso;
                 //somatorio_print.combinacao_atual[count].valorImportancia= data[j].peso;
                 //count +=1;
