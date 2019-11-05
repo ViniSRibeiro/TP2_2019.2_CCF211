@@ -44,6 +44,7 @@ int main() {
     printCombination(Vetor, N, r,comp);
   }
 
+    
     printf("Tempo:%.5f Segundos\n",(clock() - tempo) / (double)CLOCKS_PER_SEC);
 
       return 0;
