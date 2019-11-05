@@ -6,10 +6,12 @@
 
 int main() {
 
+  clock_t tempo;
+	tempo = clock();
+
   int N,peso,valor,i = 0,r,comp;
   Ttupla *Vetor;
   char leitorN[20];
-
 
   FILE* pArquivo;
   printf("Digite o nome do arquivo: ");
@@ -20,6 +22,7 @@ int main() {
 
   if((pArquivo = fopen(leitorN,"r")) == NULL){
     printf("Erro na abertura do arquivo.\n");
+    return 1;
   }else{
     printf("Arquivo aberto com sucesso.\n");
 
@@ -40,6 +43,8 @@ int main() {
     comp = N - (i+1);
     printCombination(Vetor, N, r,comp);
   }
+
+    printf("Tempo:%.5f Segundos\n",(clock() - tempo) / (double)CLOCKS_PER_SEC);
 
       return 0;
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 typedef struct{
   int peso;
@@ -13,7 +14,5 @@ typedef struct{
   Ttupla combinacao_atual[40];
 }Tsomatorio;
 
-int fatorial(int n);
-int comparacao(int n,int p);
 void printCombination(Ttupla arr[], int n, int r,int c);
 void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end,int index, int r);
