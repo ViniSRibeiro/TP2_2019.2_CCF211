@@ -1,14 +1,20 @@
 #include "TadMochila.h"
 int CAPACIDADE = 100;
-Tsomatorio somatorio, somatorio_print;
+Tsomatorio somatorio, somatorio_print,somatorio_final;
 
 void printCombination(Ttupla arr[], int n, int r,int c)
 {
     Ttupla data[r];
+  //  int i;
     combinationUtil(arr, data, 0, n-1, 0, r);
-    printf("------------------\n");
-    printf("Peso Agregado: %d\n",somatorio_print.peso_Agregado);
-    printf("Valor Agregado: %d\n",somatorio_print.valor_Agregado);
+    printf("------------------------------------------------\n");
+    printf("* Peso Agregado: %d                             *\n",somatorio_print.peso_Agregado);
+    printf("* Valor Agregado: %d                            *\n",somatorio_print.valor_Agregado);
+    /*for(i = 0 ; i < 40; i++){
+      if(somatorio_print.combinacao_atual[i].peso > 0){
+          printf("(%d %d) ",somatorio_print.combinacao_atual[i].peso,somatorio_print.combinacao_atual[i].valorImportancia);
+      }
+    }*/
     if (c == 0) {
       printf("colocar nesse local as variaveis para o print final FINAL\n");
     }
@@ -17,7 +23,7 @@ void printCombination(Ttupla arr[], int n, int r,int c)
 
 void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end, int index, int r)
 {
-  int j;
+  int j/*count = 0*/;
   somatorio.peso_Agregado = 0;
   somatorio.tamanho = 0;
   somatorio.valor_Agregado = 0;
@@ -39,7 +45,9 @@ void combinationUtil(Ttupla arr[], Ttupla data[], int start, int end, int index,
             if(somatorio.peso_Agregado <= CAPACIDADE && somatorio.valor_Agregado >somatorio_print.valor_Agregado) {
                 somatorio_print.peso_Agregado = somatorio.peso_Agregado;
                 somatorio_print.valor_Agregado = somatorio.valor_Agregado;
-                //somatorio_print.combinacao_atua
+                //somatorio_print.combinacao_atual[count].peso= data[j].peso;
+                //somatorio_print.combinacao_atual[count].valorImportancia= data[j].peso;
+                //count +=1;
             }
         }
         printf("\n");
