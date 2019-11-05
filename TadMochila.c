@@ -14,9 +14,11 @@ void printCombination(Ttupla arr[], int n, int r,int c)
 
     if (c == 0) {
       printf("\n");
+      system("cls");
+      printf("combinacoes 100%c completas\n",37);
       printf("Peso agregado da melhor combinacao: %d\n",somatorio_final.peso_Agregado );
       printf("Valor agregado da melhor combinacao: %d\n",somatorio_final.valor_Agregado );
-      printf("Tamanho da combinação: %d\n", somatorio_final.tamanho);
+      printf("Tamanho da combinacao: %d\n", somatorio_final.tamanho);
       for (i = 0; i < somatorio_final.tamanho; i++) {
         printf("(%d %d) ", somatorio_final.combinacao_atual[i].peso,somatorio_final.combinacao_atual[i].valorImportancia);
       }
