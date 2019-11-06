@@ -39,11 +39,13 @@ int main() {
   for(i = 0; i < N; i++){
     r = i+1;
     comp = N - (i+1);
+    system("cls");
+    printf("combinacoes %d%c completas\n",((100/N)*i+1),37 );
     printCombination(Vetor, N, r,comp);
   }
 
 
-    printf("Tempo:%.5f Segundos\n",(clock() - tempo) / (double)CLOCKS_PER_SEC);
+    printf("Tempo de execucao: %.3f Segundos\n",(clock() - tempo) / (double)CLOCKS_PER_SEC);
 
       return 0;
 }
