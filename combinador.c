@@ -5,7 +5,7 @@
 #include "combinador.h"
 #include <stdio.h>
 
-
+/*
 // The main function that prints all combinations of size r
 // in arr[] of size n. This function mainly uses combinationUtil()
 void printCombination(int arr[], int n, int r)
@@ -22,7 +22,7 @@ void printCombination(int arr[], int n, int r)
    r      ---> Size of a combination to be printed
    index  ---> Current index in data[]
    data[] ---> Temporary array to store current combination
-   i      ---> index of current element in arr[]     */
+   i      ---> index of current element in arr[]     *//*
 void combinationUtil(int arr[], int n, int r, int index, int data[], int i)
 {
     // Current cobination is ready, print it
@@ -45,4 +45,4 @@ void combinationUtil(int arr[], int n, int r, int index, int data[], int i)
     // current is excluded, replace it with next (Note that
     // i+1 is passed, but index is not changed)
     combinationUtil(arr, n, r, index, data, i+1);
-}
+}*/

@@ -6,6 +6,7 @@
 #define TP220192CCF211_COMBINADOR_H
 
 #endif //TP220192CCF211_COMBINADOR_H
-
+/*
 void combinationUtil(int arr[],int n,int r,int index,int data[],int i);
 void printCombination(int arr[], int n, int r);
+ */
